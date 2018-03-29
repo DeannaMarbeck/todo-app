@@ -28,13 +28,16 @@ class TaskList extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit}>
+        <div className="input-group mb-3">
           <Input onChange={this.onInputChange} value={this.state.value} />
-          <button disabled={this.state.value.length < 3} className="btn btn-success">Add</button>
-        </form>
-      </div>
+          <div className="input-group-append">
+            <button disabled={this.state.value.length < 3} className="btn btn-primary">Add</button>
+          </div>
+        </div>
+      </form>
     );
   }
 }
+
 export default TaskList;

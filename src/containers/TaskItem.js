@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import TaskItem from '../components/TaskItem';
-import { deleteTask } from '../data/actions/api';
+import { deleteTask, patchTaskComplete, putTask } from '../data/actions/api';
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, { task }) => {
   return {
-    onDelete: id => dispatch(deleteTask(id)),
+    onDelete: () => dispatch(deleteTask(task.id)),
+    onComplete: () => dispatch(patchTaskComplete(task.id)),
+    onEdit: data => dispatch(putTask(data)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(TaskList);
+export default connect(null, mapDispatchToProps)(TaskItem);

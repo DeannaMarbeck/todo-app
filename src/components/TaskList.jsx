@@ -1,26 +1,19 @@
-import React, { Component } from "react";
-import TaskItem from './TaskItem';
+import React from 'react';
+import TaskItem from '../containers/TaskItem';
 
-class TaskList extends Component {
-  componentDidMount() {
-    this.props.onLoad();
-  }
+const TaskList = ({ title, tasks }) => (
+  <div>
+    <h2>{title}</h2>
+    {tasks.length ?
+      <ul className="list-group">
+        { tasks.map(task => (
+          <TaskItem key={task.id} task={task} />
+        ))}
+      </ul>
+      :
+      <p>No tasks found yet.</p>
+    }
+  </div>
+);
 
-  render() {
-    const { tasks } = this.props;
-    return (
-      <div>
-        {tasks.length ?
-          <ul className="list-group">
-            { tasks.map(task => (
-              <TaskItem key={task.id} task={task} />
-            ))}
-          </ul>
-          :
-          <p>No tasks found yet.  Please add some</p>
-        }
-      </div>
-    );
-  }
-}
- export default TaskList;
+export default TaskList;

@@ -1,0 +1,27 @@
+h1,
+h2 {
+  margin-top: 1rem;
+}
+
+.task-text {
+  cursor: pointer;
+}
+
+.task-buttons {
+  float: right;
+}
+
+.delete-task,
+.complete-task {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.complete-task {
+  color: #28a745;
+}
+
+.delete-task {
+  margin-left: .75rem;
+  color: #dc3545;
+}

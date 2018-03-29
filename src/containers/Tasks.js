@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import TaskList from '../components/TaskList';
+import Tasks from '../components/Tasks';
 import { getTasks } from '../data/actions/api';
 
 const mapStateToProps = state => {
   return {
-    tasks: state.tasks
+    uncompletedTasks: state.tasks.filter(t => !t.completed),
+    completedTasks: state.tasks.filter(t => t.completed),
   };
 };
 
@@ -14,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TaskList);
+export default connect(mapStateToProps, mapDispatchToProps)(Tasks);

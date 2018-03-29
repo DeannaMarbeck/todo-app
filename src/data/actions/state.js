@@ -11,3 +11,24 @@ export const addTask = task => {
     task: task,
   };
 };
+
+export const removeTask = id => {
+  return {
+    type: 'removeTask',
+    id: id,
+  }
+};
+
+export const setTaskComplete = task => {
+  return {
+    type: 'setTaskComplete',
+    task: task,
+  }
+}
+
+export const updateTask = task => {
+  return {
+    type: 'updateTask',
+    task: task,
+  }
+}

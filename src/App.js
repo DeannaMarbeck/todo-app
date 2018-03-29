@@ -1,5 +1,5 @@
 import React  from 'react';
-import TaskList from './containers/TaskList';
+import Tasks from './containers/Tasks';
 import AddTask from './containers/AddTask';
 
 const App = () => (
@@ -7,7 +7,7 @@ const App = () => (
     <h1>To Do List</h1>
     <hr />
     <AddTask />
-    <TaskList />
+    <Tasks />
   </div>
 );
 
